@@ -1,0 +1,6 @@
+# quy dinh nhung file duoc day len github
+/node_modules
+/vendor
+/.idea
+.idea/
+.env
