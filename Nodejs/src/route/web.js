@@ -1,14 +1,18 @@
 import express from "express";
-import HomeController from "../controllers/HomeController";
+import homeController from "../controllers/HomeController";
 
 let router = express.Router();
 
 let initWebRoutes = (app) => {
-    router.get("/", HomeController.getHomePage);
+    router.get("/", homeController.getHomePage);
 
-    router.get("/lingg", (req, res) => {
-        return res.send("lingg nef");
-    });
+    router.get("/crud", homeController.getCRUD);
+    router.post("/post-crud", homeController.postCRUD);
+    router.get("/get-crud", homeController.displayGetCRUD);
+    router.get("/edit-crud", homeController.getEditCRUD);
+    router.post("/put-crud", homeController.putCRUD);
+    router.get("/delete-crud", homeController.deleteCRUD);
+
     return app.use("/", router);
 };
 
